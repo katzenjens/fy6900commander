@@ -30,7 +30,7 @@ Die Web Serial API erfordert zwingend einen sicheren Kontext (`https://` oder `l
 
 **Du hast zwei Möglichkeiten:**
 
-1.  **Online nutzen:** Rufe den Commander direkt über diese Webseite auf: `[Link zur GitHub Pages Seite hier einfügen]` (Keine Installation nötig).
+1.  **Online nutzen:** Rufe den Commander direkt über diese Webseite auf:(https://katzenjens.github.io/fy6900commander/) (Keine Installation nötig).
 2.  **Lokal hosten:** Klone das Repository und stelle die Dateien auf deinen vorhandenen Webserver oder über einen lokalen Webserver (z. B. VS Code Live Server, Python `http.server` etc.) bereit.
 
 * * *
