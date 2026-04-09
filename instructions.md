@@ -80,7 +80,7 @@ To generate modulated signals, proceed step-by-step:
 3.  Expand the **"MODULATION CENTER"** accordion menu.
 4.  Work your way from left to right: **1\. Mode** -\> **2\. Source** -\> **3\. Parameters**.
 5.  In the **4\. Modulation** section, click **"START"**. The modulated signal is now output on CH1, whilst the pure modulation signal (e.g., for triggering an oscilloscope) is output on CH2.
-6.  Clicking **"STOP"** ends the modulation and returns CH1 to outputting the unmodulated carrier frequency.
+6.  Clicking **"STOP"** stopps the modulation and returns CH1 to outputting the unmodulated carrier frequency.
 
 * * *
 
