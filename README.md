@@ -14,3 +14,5 @@ Only works in Chrome based browsers.
 Schnauze voll von der grausamen Bedienung über das unübersichtliche Bedienfeld des FY6900? Euch kann geholfen werden. Nutzt stattdessen dieses praktisch gestaltete Webinterface.
 
 Aber erstmal die Anleitung lesen! Und dann hier klicken: https://katzenjens.github.io/fy6900commander/
+
+Funktioniert nur mit Chrome-basierten Browsern.
