@@ -75,7 +75,7 @@ Die empfohlene Vorgehensweise ist: Zuerst die gewünschte Wellenform (Wave) ausw
 
 Um modulierte Signale zu erzeugen, gehe schrittweise vor:
 
-1.  Stelle auf **CH1 die Trägerfrequenz** und die Wellenform (meist Sinus) ein.
+1.  Stelle auf **CH1 die Trägerfrequenz** , weitere Parameter wie Amplitude und die Wellenform (meist Sinus) ein.
 2.  Stelle auf **CH2 die Modulationsfrequenz** ein. Drücke bei beiden Kanälen auf "SET" und schalte beide Ausgänge "ON".
 3.  Klappe das Akkordeon-Menü **„Modulation Center“** auf.
 4.  Arbeite dich von links nach rechts durch: **1\. Mode** -\> **2\. Source** -\> **3\. Parameters**.
