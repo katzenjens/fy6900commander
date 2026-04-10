@@ -8,6 +8,8 @@ Tired of accessing your FY6900 from the horrible user interface on the front? Su
 Read the instructions first. Then klick here: https://katzenjens.github.io/fy6900commander/
 Only works in Chrome based browsers.
 
+Feel free to open an issue if your device does not react like it should do since I only tested it with my hardware. Your mileage may vary.
+
 ----------------
 **Fernbedienung über den Browser zum FY6900 Funktionsgenerator. Geschrieben aussschließlich in HTML / CSS / Javascript.**
 
@@ -16,3 +18,5 @@ Schnauze voll von der grausamen Bedienung über das unübersichtliche Bedienfeld
 Aber erstmal die Anleitung lesen! Und dann hier klicken: https://katzenjens.github.io/fy6900commander/
 
 Funktioniert nur mit Chrome-basierten Browsern.
+
+Falls etwas nicht wie erwartet funktionieren sollte, bitte ein issue öffnen. Ich habe den Kram nur mit meiner Version der Hardware testen können.
