@@ -75,7 +75,7 @@ The recommended procedure is: First select the desired waveform (Wave), then adj
 
 To generate modulated signals, proceed step-by-step:
 
-1.  Set the **carrier frequency** and waveform (usually Sine) on **CH1**.
+1.  Set the **carrier frequency** , amplitude and waveform (usually Sine) on **CH1**.
 2.  Set the **modulation frequency** on **CH2**. Click "SET" for both channels and toggle both outputs to "ON".
 3.  Expand the **"MODULATION CENTER"** accordion menu.
 4.  Work your way from left to right: **1\. Mode** -\> **2\. Source** -\> **3\. Parameters**.
