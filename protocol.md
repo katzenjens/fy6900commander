@@ -49,13 +49,15 @@ _Example: `WMA...` sets the amplitude on CH1, `WFA...` sets it on CH2._
 
 | CH1 Set | CH2 Set | Read Command | Function | Format / Scaling |
 | --- | --- | --- | --- | --- |
-| `WMF` | `WFF` | `RMF` / `RFF` | Frequency | In µHz (14 digits). _Example: 1 kHz = 1000000000_ |
+| `WMF` | `WFF` | `RMF` / `RFF` | (*)Frequency | In µHz (14 digits). _Example: 1 kHz = 1000000000_ |
 | `WMA` | `WFA` | `RMA` / `RFA` | Amplitude | Value \* 10000 (e.g., 5V = 50000) |
 | `WMO` | `WFO` | `RMO` / `RFO` | Offset | Value \* 1000 (e.g., 2V = 2000) |
 | `WMD` | `WFD` | `RMD` / `RFD` | Duty Cycle | Value \* 1000 (e.g., 50% = 50000) |
 | `WMP` | `WFP` | `RMP` / `RFP` | Phase | Value \* 1000 (e.g., 180° = 180000) |
 | `WMW` | `WFW` | `RMW` / `RFW` | Waveform | Index number of the waveform (Sine = 0, Arb 1 = 36) |
 | `WMN` | `WFN` | `RMN` / `RFN` | Output On/Off | `1` = On, `0` = Off |
+
+> **Hardware Quirk: Newer versions of the FY6900 have a different frequency syntax** xxxxxxxx.yyyyyy
 
 > **Hardware Quirk: The CH2 Waveform Index Shift** The index numbers for the waveforms are shifted for CH2 starting from index 5! While the "Adj-Pulse" waveform is located at index 5 for CH1, it is entirely missing for CH2 (since CH2 hardware doesn't support this waveform). _Workaround when sending to CH2:_ If the selected waveform index is `>= 5`, the command sent to CH2 must be decreased by 1 (`WFW + (Index - 1)`).
 
