@@ -30,7 +30,7 @@ The Web Serial API strictly requires a secure context (`https://` or `localhost`
 
 **You have two options:**
 
-1.  **Use online:** Access the Commander directly via this website: `[Insert Link to GitHub Pages site here]` (No installation required).
+1.  **Use online:** Access the Commander directly via this website: (https://katzenjens.github.io/fy6900commander/) (No installation required). In case you have the newer version of the FY6900 and have issues tuning the frequency, use this website: (https://katzenjens.github.io/fy6900commander/new_version.html)
 2.  **Host locally:** Clone the repository and serve the files using existing webspace or a local web server (e.g., VS Code Live Server, Python `http.server`, etc.).
 
 * * *
@@ -114,7 +114,7 @@ This menu is divided into two sections:
 8\. Notes & Debugging
 ---------------------
 
-This tool was specifically developed and tested for an **FY6900 running firmware version 1.3**. It should also work with newer versions and the predecessor, the FY6800, but a 100% guarantee for all revisions cannot be given. The layout is optimised for desktop use.
+This tool was specifically developed and tested for an **FY6900 running firmware version 1.3**. It should also work with newer versions and the predecessor, the FY6800, but a 100% guarantee for all revisions cannot be given. The layout is optimised for desktop use. Newer versions of the FY6900 have a different frequency adjustment command. In that case, use the Link with new_version.html. Both versions are identical except this line: **var hwVersion = "new";**
 
 Should you encounter incompatibilities or wish to investigate the protocol, expand the **"DEBUG TERMINAL"** right at the bottom. Here, you can view the raw serial RX/TX traffic and manually send commands (e.g., from the accompanying command reference) to the device.
 
