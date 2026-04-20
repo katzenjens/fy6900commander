@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FY6900 Commander v7.19 - Wave Editor Integrated</title>
+    <title>FY6900 Commander v7.24 - Wave Editor & Revision Toggle</title>
     <style>
         body { background-color: #1a1a1a; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 15px; display: flex; flex-direction: column; align-items: center; }
         header { width: 100%; max-width: 1005px; background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; margin-bottom: 20px; border: 1px solid #444; box-sizing: border-box; }
@@ -56,7 +57,8 @@
         .v-line { border-left: 1px solid #444; margin: 0 5px; }
         .unit-label { font-size: 11px; color: #666; width: 35px; margin-left: 5px; }
         
-        .mod-btn { width: 100%; padding: 8px; background: #333; border: 1px solid #555; color: #eee; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 4px; box-sizing: border-box; }
+        /* Reduced horizontal padding to allow longer labels (e.g. Upl. MASTER) */
+        .mod-btn { width: 100%; padding: 8px 2px; background: #333; border: 1px solid #555; color: #eee; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 4px; box-sizing: border-box; }
         .mod-btn.active { background: #e67e22 !important; color: #fff !important; border-color: #fff !important; }
         .mod-btn:disabled { opacity: 0.15; cursor: not-allowed; filter: grayscale(1); }
 
@@ -276,7 +278,7 @@
         </div>
     </div>
 
-    <div class="acc-item" id="sys-acc" class="active">
+    <div class="acc-item" id="sys-acc">
         <div class="acc-header" onclick="toggleAcc(this)">SYSTEM & ARB WAVE EDITOR</div>
         <div class="acc-content">
             <div class="tool-grid">
@@ -287,11 +289,29 @@
                         <button class="mod-btn" id="sys-bz-on" onclick="toggleSys('UBZ1', 'sys-bz', true)">BUZZER ON</button>
                         <button class="mod-btn" id="sys-bz-off" onclick="toggleSys('UBZ0', 'sys-bz', false)">BUZZER OFF</button>
                         
-                        <button class="mod-btn" id="sys-um-master" onclick="toggleSys('UMS0', 'sys-um', true)">UPLINK MASTER</button>
-                        <button class="mod-btn" id="sys-um-slave" onclick="toggleSys('UMS1', 'sys-um', false)">UPLINK SLAVE</button>
+                        <button class="mod-btn" id="sys-um-master" onclick="toggleSys('UMS0', 'sys-um', true)">Upl. MASTER</button>
+                        <button class="mod-btn" id="sys-um-slave" onclick="toggleSys('UMS1', 'sys-um', false)">Upl. SLAVE</button>
                         
-                        <button class="mod-btn" id="sys-ul-on" onclick="toggleSys('UUL1', 'sys-ul', true)">UPLINK ON</button>
-                        <button class="mod-btn" id="sys-ul-off" onclick="toggleSys('UUL0', 'sys-ul', false)">UPLINK OFF</button>
+                        <button class="mod-btn" id="sys-ul-on" onclick="toggleSys('UUL1', 'sys-ul', true)">Upl. ON</button>
+                        <button class="mod-btn" id="sys-ul-off" onclick="toggleSys('UUL0', 'sys-ul', false)">Upl. OFF</button>
+                    </div>
+
+                    <div class="section-label" style="margin-top:20px;">CH2 Sync (Follow CH1)</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                        <button class="mod-btn" id="sync-w-on" onclick="toggleSync(0, true)">WAVE ON</button>
+                        <button class="mod-btn" id="sync-w-off" onclick="toggleSync(0, false)">WAVE OFF</button>
+                        
+                        <button class="mod-btn" id="sync-f-on" onclick="toggleSync(1, true)">FREQ ON</button>
+                        <button class="mod-btn" id="sync-f-off" onclick="toggleSync(1, false)">FREQ OFF</button>
+                        
+                        <button class="mod-btn" id="sync-a-on" onclick="toggleSync(2, true)">AMP ON</button>
+                        <button class="mod-btn" id="sync-a-off" onclick="toggleSync(2, false)">AMP OFF</button>
+                        
+                        <button class="mod-btn" id="sync-o-on" onclick="toggleSync(3, true)">OFFS ON</button>
+                        <button class="mod-btn" id="sync-o-off" onclick="toggleSync(3, false)">OFFS OFF</button>
+                        
+                        <button class="mod-btn" id="sync-d-on" onclick="toggleSync(4, true)">DUTY ON</button>
+                        <button class="mod-btn" id="sync-d-off" onclick="toggleSync(4, false)">DUTY OFF</button>
                     </div>
                     
                     <div class="section-label" style="margin-top:20px;">Memory Slots</div>
@@ -309,7 +329,7 @@
                     </div>
                     
                     <div id="canvas-container">
-                        <canvas id="waveCanvas" width="640" height="240"></canvas>
+                        <canvas id="waveCanvas" width="640" height="460"></canvas>
                     </div>
                     
                     <div style="display:flex; gap:12px; align-items:center; width:100%; padding: 0 10px; box-sizing: border-box;">
@@ -358,6 +378,12 @@
 </div>
 
 <script>
+    // ======= HARDWARE REVISION TOGGLE =======
+    // "old" = WMF/WFF are sent as integer in microhertz (e.g. WMF1000000000000 for 1MHz)
+    // "new" = WMF/WFF are sent as float in hertz (e.g. WMF1000000.000000 for 1MHz)
+    var hwVersion = "old"; 
+    // ========================================
+
     var port = null, writer = null, responseResolver = null, resolveW = null;
     var state = { ch1: { freq: 0, step: 1, rot: 0, adjPhas: "0" }, ch2: { freq: 0, step: 1, rot: 0 } };
     var modState = { mode: 4, source: 0 };
@@ -378,6 +404,15 @@
     const points = new Uint16Array(8192);
     let isDrawing = false, lastX = null, lastY = null;
     points.fill(8192);
+
+    // Formats frequency according to the hardware revision
+    function getDeviceFreqString(freq) {
+        if (hwVersion === "new") {
+            return freq.toFixed(6); 
+        } else {
+            return Math.round(freq * 1000000).toString().padStart(14, '0');
+        }
+    }
 
     async function connectSerial() { 
         try { 
@@ -454,6 +489,20 @@
         if(offBtn) offBtn.classList.toggle('active', !isTrue);
     }
 
+    async function toggleSync(obj, isTrue) {
+        let cmd = (isTrue ? "USA" : "USD") + obj;
+        await query(cmd);
+        updateSyncBtn(obj, isTrue);
+    }
+
+    function updateSyncBtn(obj, isTrue) {
+        const ids = ['w', 'f', 'a', 'o', 'd'];
+        let onBtn = document.getElementById('sync-' + ids[obj] + '-on');
+        let offBtn = document.getElementById('sync-' + ids[obj] + '-off');
+        if(onBtn) onBtn.classList.toggle('active', isTrue);
+        if(offBtn) offBtn.classList.toggle('active', !isTrue);
+    }
+
     async function setSweepMode(m, btn) { sweepData.mode = m; document.querySelectorAll('.sw-mode-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); updateSweepUI(); await query("SXY" + m); }
     async function setSweepObj(o, btn) { saveSweepInputs(); sweepData.obj = o; document.querySelectorAll('.sw-obj-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); updateSweepUI(); await query("SOB" + o); }
     async function setSweepDir(d, btn) { sweepData.settings[sweepData.obj].dir = d; document.querySelectorAll('.sw-dir-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); await query("SMD" + d); }
@@ -498,7 +547,7 @@
         
         if (riseEl) riseEl.disabled = (w1 !== 3);
         if (phasEl) phasEl.disabled = (w1 !== 5);
-        if (duty1El) duty1El.disabled = (w1 !== 2 && w1 !== 4); // Nur Rectangle (2) und CMOS (4)
+        if (duty1El) duty1El.disabled = (w1 !== 2 && w1 !== 4); 
 
         let w2 = parseInt(document.getElementById("wave2").value);
         let duty2El = document.getElementById("duty2");
@@ -512,6 +561,12 @@
         let rBZ = await query("RBZ"); if(rBZ) updateSysBtn("sys-bz", parseInt(clean(rBZ)) === 255);
         let rMS = await query("RMS"); if(rMS) updateSysBtn("sys-um", parseInt(clean(rMS)) === 0);
         let rUL = await query("RUL"); if(rUL) updateSysBtn("sys-ul", parseInt(clean(rUL)) === 255);
+
+        // Fetching Sync statuses
+        for(let i=0; i<=4; i++) {
+            let rSync = await query("RSA" + i);
+            if(rSync) updateSyncBtn(i, parseInt(clean(rSync)) === 255);
+        }
 
         let rM = await query("RPF"); if(rM) { let m = parseInt(clean(rM)), ids = ["m-fsk","m-ask","m-psk","m-burst","m-am","m-fm","m-pm"]; if(ids[m]) setModMode(m, document.getElementById(ids[m])); }
         let rS = await query("RPM"); if(rS) { let s = parseInt(clean(rS)), ids = ["s-ch2","s-extac","s-manu","s-extdc"]; if(ids[s]) setModSource(s, document.getElementById(ids[s])); }
@@ -566,7 +621,7 @@
         let change = state["ch"+ch].step * mult;
         state["ch"+ch].freq = Math.max(0, state["ch"+ch].freq + change);
         document.getElementById("disp"+ch).innerHTML = formatFreq(state["ch"+ch].freq);
-        await query((ch==1?"WMF":"WFF") + Math.round(state["ch"+ch].freq*1000000).toString().padStart(14,'0'));
+        await query((ch==1?"WMF":"WFF") + getDeviceFreqString(state["ch"+ch].freq));
     }
 
     function setupKnobs() { 
@@ -582,7 +637,7 @@
                 state["ch"+ch].rot += (d * 15);
                 knob.style.transform = `rotate(${state["ch"+ch].rot}deg)`;
                 
-                await query((ch==1?"WMF":"WFF")+Math.round(state["ch"+ch].freq*1000000).toString().padStart(14,'0')); 
+                await query((ch==1?"WMF":"WFF") + getDeviceFreqString(state["ch"+ch].freq)); 
             }, {passive:false}); 
         }); 
     }
