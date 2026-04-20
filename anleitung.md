@@ -31,6 +31,7 @@ Die Web Serial API erfordert zwingend einen sicheren Kontext (`https://` oder `l
 **Du hast zwei Möglichkeiten:**
 
 1.  **Online nutzen:** Rufe den Commander direkt über diese Webseite auf:(https://katzenjens.github.io/fy6900commander/) (Keine Installation nötig).
+Für neuere Versionen des FY6900 diese Webseite aufrufen: (https://katzenjens.github.io/fy6900commander/new_version.html)  
 2.  **Lokal hosten:** Klone das Repository und stelle die Dateien auf deinen vorhandenen Webserver oder über einen lokalen Webserver (z. B. VS Code Live Server, Python `http.server` etc.) bereit.
 
 * * *
@@ -114,7 +115,10 @@ Dieses Menü ist in zwei Bereiche unterteilt:
 8\. Hinweise & Debugging
 ------------------------
 
-Dieses Tool wurde gezielt für einen **FY6900 mit der Firmware Version 1.3** entwickelt und getestet. Es sollte auch mit neueren Versionen sowie dem Vorgänger FY6800 funktionieren, eine hundertprozentige Garantie für alle Revisionen kann jedoch nicht gegeben werden. Das Layout ist auf Desktop-Nutzung optimiert.
+Dieses Tool wurde gezielt für einen **FY6900 mit der Firmware Version 1.3** entwickelt und getestet. Es sollte auch mit neueren Versionen sowie dem Vorgänger FY6800 funktionieren, eine hundertprozentige Garantie für alle Revisionen kann jedoch nicht gegeben werden. Das Layout ist auf Desktop-Nutzung optimiert. Durch einen netten Menschen, welcher die neuere Version vom FY6900 hat, konnte ich nun auch für diese Version die passende Software bereitstellen. Im Quelltext der index.htm muss nur eine Zeile angepasst werden:
+ **var hwVersion = "new";**
+ 
+ Die index.html und new_version.html sind bis auf diese Zeile identisch.
 
 Solltest du auf Inkompatibilitäten stoßen oder das Protokoll untersuchen wollen, klappe das **„DEBUG TERMINAL“** ganz unten auf. Hier siehst du den rohen seriellen RX/TX-Verkehr und kannst händisch Befehle (z.B. aus der beiliegenden Befehlsreferenz) an das Gerät absetzen.
 
