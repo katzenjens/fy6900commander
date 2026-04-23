@@ -3,10 +3,15 @@ FY6900 Function Generator Remote via WebSerial
 -----------------
 **Browser Remote for the FeelTech FY9600 and FY6800 Function Generator. Written entirely in HTML / CSS / Javascript.**
 
-Tired of accessing your FY6900 from the horrible user interface on the front? Suffering is over! Use this Web-based remote control with all the bells and whistles instead.
+Tired of accessing your FY6900 from the horrible user interface on the front? No more suffering! Use this web-based remote control with all the bells and whistles instead.
 
-Read the instructions first. Then click here: https://katzenjens.github.io/fy6900commander/
-For newer versions of the FY6900 in case the frequency adjustment has issues click here: https://katzenjens.github.io/fy6900commander/new_version.html
+Read the instructions first. Then click here:
+
+https://katzenjens.github.io/fy6900commander/
+
+For newer versions of the FY6900 in case the frequency adjustment has issues click here:
+
+https://katzenjens.github.io/fy6900commander/new_version.html
 
 Only works in Chrome based browsers.
 
@@ -15,11 +20,18 @@ Feel free to open an issue if your device does not react like it should do since
 ----------------
 **Fernbedienung über den Browser zum FY6900 Funktionsgenerator. Geschrieben aussschließlich in HTML / CSS / Javascript.**
 
-Schnauze voll von der grausamen Bedienung über das unübersichtliche Bedienfeld des FY6900? Euch kann geholfen werden. Nutzt stattdessen dieses praktisch gestaltete Webinterface.
+Schnauze voll von der grausamen Bedienung über das unübersichtliche Bedienfeld des FeelTech FY6900? Euch kann geholfen werden. Nutzt stattdessen dieses praktisch gestaltete Webinterface.
 
-Aber erstmal die Anleitung lesen! Und dann hier klicken: https://katzenjens.github.io/fy6900commander/
-Neuere Versionen des FY6900 haben eine leicht geänderte Frequenzwahl. Dann hier klicken: https://katzenjens.github.io/fy6900commander/new_version.html
+Aber erstmal die Anleitung lesen! Danach hier klicken:
+
+https://katzenjens.github.io/fy6900commander/
+
+Neuere Versionen des FY6900 haben eine leicht geänderte Frequenzwahl. 
+
+Dann hier klicken:
+
+https://katzenjens.github.io/fy6900commander/new_version.html
 
 Funktioniert nur mit Chrome-basierten Browsern.
 
-Falls etwas nicht wie erwartet funktionieren sollte, bitte ein issue öffnen. Ich habe den Kram nur mit meiner Version der Hardware testen können.
+Falls etwas nicht wie erwartet funktionieren sollte, bitte ein Issue öffnen. Ich habe den Kram nur mit meiner Version der Hardware testen können. Die neuere Hardwareversion hat jemand anders getestet. Eigentlich sollte nun alles funktionieren.
