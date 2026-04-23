@@ -95,6 +95,7 @@ Hinweis: Teilweise weicht die Beschriftung am Gerät von den Einstellungen in de
 
 *   Bereite CH1 vor (Amplitude, Offset, Wellenform via "SET" übernehmen).
 *   Klappe das Menü **„Sweep / VCO Control“** auf und gib Modus, Objekt, Richtung sowie Start, Stop, Time und Scaling ein.
+*   _Fehler:_ Scaling funktioniert nicht. Das Gerät ignoriert diese Einstellung obwohl sie auf dem Display erscheint.
 *   _Hinweis:_ Diese Sweep-Parameter werden nicht dauerhaft in der Hardware gespeichert und müssen hier in der Software eingegeben werden.
 *   Drücke **„SET VALUES“**, um die Parameter in den temporären Speicher des Geräts zu laden.
 *   Mit **„START / STOP“** aktivierst oder pausierst du den Sweep.
