@@ -54,7 +54,7 @@ Upon initially loading (or reloading) the page, the status will show as "Offline
 Both channels offer extremely fine resolution down to the microhertz range.
 
 *   Select your desired **step size** (from "MHz" down to "μHz") in the top bar.
-*   Hover your mouse over the graphical **rotary knob** and use your **mouse scroll wheel** to conveniently increase or decrease the frequency. Changes are sent to the device _in real time_!
+*   Hover your mouse over the graphical **rotary knob** and use your **mouse scroll wheel** to conveniently increase or decrease the frequency. Changes are sent to the device _in real time_! **If you have issues adjusting the frequency, try the other version of the website.**
 *   For larger jumps, use the small **\[ - \] and \[ + \] (x100) buttons** located beneath the knob to instantly add or subtract exactly one hundred times your selected step size.
 *   You can toggle the outputs on or off live using the respective **CH ON / OFF** buttons to the right of the knob.
 
@@ -115,6 +115,10 @@ This menu is divided into two sections:
 ---------------------
 
 This tool was specifically developed and tested for an **FY6900 running firmware version 1.3**. It should also work with newer versions and the predecessor, the FY6800, but a 100% guarantee for all revisions cannot be given. The layout is optimised for desktop use. Newer versions of the FY6900 have a different frequency adjustment command. In that case, use the Link with new_version.html. Both versions are identical except this line: **var hwVersion = "new";**
+
+The new hardware version got two extra waveforms, which means you're two slots short for your own custom ones. Since faffing about shifting things around in the software is more hassle than it's worth, I can't be bothered expanding it. Because of this, the positions on the web view don't actually match up with the display on the newer hardware.
+
+Besides that, the screen on the device doesn't always tally up with what it's actually doing anyway. Standard problem with cheap Chinese stuff. 🙄
 
 Should you encounter incompatibilities or wish to investigate the protocol, expand the **"DEBUG TERMINAL"** right at the bottom. Here, you can view the raw serial RX/TX traffic and manually send commands (e.g., from the accompanying command reference) to the device.
 
