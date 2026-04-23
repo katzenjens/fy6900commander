@@ -34,7 +34,7 @@ Die Web Serial API erfordert zwingend einen sicheren Kontext (`https://` oder `l
 
 (https://katzenjens.github.io/fy6900commander/) Für alte Hardwareversionen, z.B. V. 1.3 (Keine Installation nötig).
 (https://katzenjens.github.io/fy6900commander/new_version.html)  Für neuere Versionen des FY6900.
-Falls es bei der Frequenzeinstellung zu Problemen kommt, jeweils die andere Version aufrufen.
+**Falls es bei der Frequenzeinstellung zu Problemen kommt, jeweils die andere Version aufrufen.**
 
 2.  **Lokal hosten:** Klone das Repository und stelle die .html Dateien auf deinen vorhandenen Webserver oder über einen lokalen Webserver (z. B. VS Code Live Server, Python `http.server` etc.) bereit. Hinweis: Die Dateien index.html und new_version.html sind bis auf eine Zeile identisch. In dieser ist entweder "new" oder "old" vermerkt.
 
