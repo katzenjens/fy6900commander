@@ -30,9 +30,13 @@ Die Web Serial API erfordert zwingend einen sicheren Kontext (`https://` oder `l
 
 **Du hast zwei Möglichkeiten:**
 
-1.  **Online nutzen:** Rufe den Commander direkt über diese Webseite auf:(https://katzenjens.github.io/fy6900commander/) (Keine Installation nötig).
-Für neuere Versionen des FY6900 diese Webseite aufrufen: (https://katzenjens.github.io/fy6900commander/new_version.html)  
-2.  **Lokal hosten:** Klone das Repository und stelle die Dateien auf deinen vorhandenen Webserver oder über einen lokalen Webserver (z. B. VS Code Live Server, Python `http.server` etc.) bereit.
+1.  **Online nutzen:** Rufe den Commander direkt über diese Webseite je nach Version der Hardware auf:
+
+(https://katzenjens.github.io/fy6900commander/) Für alte Hardwareversionen, z.B. V. 1.3 (Keine Installation nötig).
+(https://katzenjens.github.io/fy6900commander/new_version.html)  Für neuere Versionen des FY6900.
+Falls es bei der Frequenzeinstellung zu Problemen kommt, jeweils die andere Version aufrufen.
+
+2.  **Lokal hosten:** Klone das Repository und stelle die .html Dateien auf deinen vorhandenen Webserver oder über einen lokalen Webserver (z. B. VS Code Live Server, Python `http.server` etc.) bereit. Hinweis: Die Dateien index.html und new_version.html sind bis auf eine Zeile identisch. In dieser ist entweder "new" oder "old" vermerkt.
 
 * * *
 
@@ -83,6 +87,7 @@ Um modulierte Signale zu erzeugen, gehe schrittweise vor:
 5.  Im Feld **4\. Modulation** klickst du auf **„START“**. Das modulierte Signal liegt nun an CH1 an, das reine Modulationssignal (z.B. für Trigger-Zwecke am Oszilloskop) an CH2.
 6.  Ein Klick auf **„STOP“** beendet die Modulation und lässt CH1 wieder die unmodulierte Trägerfrequenz ausgeben.
 
+Hinweis: Teilweise weicht die Beschriftung am Gerät von den Einstellungen in der Software ab. Es gilt aber tatsächlich das, was im Browser angezeigt wird. Komisch, aber es ist tatsächlich so. 🤣
 * * *
 
 6\. Sweep / VCO Control
@@ -115,10 +120,14 @@ Dieses Menü ist in zwei Bereiche unterteilt:
 8\. Hinweise & Debugging
 ------------------------
 
-Dieses Tool wurde gezielt für einen **FY6900 mit der Firmware Version 1.3** entwickelt und getestet. Es sollte auch mit neueren Versionen sowie dem Vorgänger FY6800 funktionieren, eine hundertprozentige Garantie für alle Revisionen kann jedoch nicht gegeben werden. Das Layout ist auf Desktop-Nutzung optimiert. Durch einen netten Menschen, welcher die neuere Version vom FY6900 hat, konnte ich nun auch für diese Version die passende Software bereitstellen. Im Quelltext der index.htm muss nur eine Zeile angepasst werden:
+Dieses Tool wurde gezielt für einen **FY6900 mit der Firmware Version 1.3** entwickelt und getestet. Es sollte auch mit neueren Versionen sowie dem Vorgänger FY6800 funktionieren, eine hundertprozentige Garantie für alle Revisionen kann jedoch nicht gegeben werden. Das Layout ist auf Desktop-Nutzung optimiert. Durch einen netten Menschen, welcher die neuere Version vom FY6900 hat, konnte ich nun auch für diese Version die passende Software bereitstellen. Im Quelltext der index.html muss nur eine Zeile angepasst werden:
  **var hwVersion = "new";**
  
  Die index.html und new_version.html sind bis auf diese Zeile identisch.
+
+Die neue Hardwareversion hat zwei zuätzliche Wellenformen und daher 2 Speicherplätze weniger für selbsterstellte Wellenformen. Da diese ganze Herumschieberei in der Software mehr Schwierigkeiten als Sinn macht, habe ich von einer Erweiterung abgesehen. Daher sind die Positionen in der Webanzeige in der neueren Version der Hardware nicht mit denen im Display identisch.
+
+Davon abgesehen passt die Displayanzeige am Gerät nicht immer zu der aktuellen Funktion. Das ist ein Problem bei preiswerten Geräten aus China.🙄
 
 Solltest du auf Inkompatibilitäten stoßen oder das Protokoll untersuchen wollen, klappe das **„DEBUG TERMINAL“** ganz unten auf. Hier siehst du den rohen seriellen RX/TX-Verkehr und kannst händisch Befehle (z.B. aus der beiliegenden Befehlsreferenz) an das Gerät absetzen.
 
