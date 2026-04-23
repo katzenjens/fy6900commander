@@ -88,7 +88,7 @@ To generate modulated signals, proceed step-by-step:
 -----------------------
 
 *   Prepare CH1 (apply amplitude, offset, and waveform via "SET").
-*   Expand the **"SWEEP / VCO CONTROL"** menu and enter your Mode, Object, Direction, as well as Start, Stop, Time, and Scaling values.
+*   Expand the **"SWEEP / VCO CONTROL"** menu and enter your Mode, Object, Direction, as well as Start, Stop, Time, and Scaling values. _Hint:_ Scaling (Lin/Log) seems to be not working. At least on my unit. It shows it on the display but no changes on the output.
 *   _Note:_ These sweep parameters are not permanently stored in the hardware and must be entered here in the software.
 *   Click **"SET VALUES"** to load the parameters into the device's temporary memory.
 *   Use **"START / STOP"** to activate or pause the sweep.
