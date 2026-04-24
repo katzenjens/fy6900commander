@@ -10,93 +10,62 @@
         #device-info { font-size: 11px; color: #666; font-family: monospace; border-left: 1px solid #333; padding-left: 10px; }
         .ready { color: #2ecc71 !important; }
         .sync { color: #3498db !important; }
-        
         .container { display: flex; gap: 25px; justify-content: center; width: 100%; max-width: 1100px; flex-wrap: wrap; margin-bottom: 15px; }
         .card { background: #252525; border-top: 6px solid #444; border-radius: 12px; padding: 15px; width: 490px; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.5); box-sizing: border-box; }
         .ch1 { border-top-color: #f1c40f; } .ch2 { border-top-color: #3498db; }
         .display { background: #000; color: #fff; font-family: 'Courier New', monospace; font-size: 28px; padding: 12px; text-align: right; border-radius: 6px; margin-bottom: 15px; border: 1px solid #444; letter-spacing: 1px; min-height: 60px; box-sizing: border-box; width: 100%; display: flex; align-items: center; justify-content: flex-end; }
-        
         .controls-area { display: flex; gap: 15px; align-items: flex-start; min-height: 265px; }
-        
         .left-column { flex: 1; }
         .right-column { width: 110px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .steps { display: flex; gap: 2px; margin-bottom: 15px; }
         .s-btn { flex: 1; font-size: 10px; padding: 8px 5px; cursor: pointer; background: #333; color: #999; border: 1px solid #555; border-radius: 4px; font-weight: bold; text-align: center; }
         .s-btn.active { background: #555; color: #fff; border-color: #fff; }
         .s-btn:hover { background: #666; color: #fff; }
-        
         .row { display: flex; margin-bottom: 6px; align-items: center; }
         .row label { width: 95px; font-size: 12px; color: #aaa; font-weight: bold; }
         .row input, .row select { flex: 1; background: #000; color: #fff; border: 1px solid #555; padding: 5px 8px; border-radius: 4px; font-size: 13px; transition: background 0.3s; min-width: 0; }
         .dirty { background: #5a3e1a !important; border-color: #e67e22 !important; color: #ffcc88 !important; }
-        
         .knob { width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, #444 0%, #000 100%); border: 4px solid #555; cursor: ns-resize; position: relative; transition: transform 0.1s linear; }
         .knob::after { content: ""; position: absolute; top: 12px; left: 50%; width: 8px; height: 8px; background: #fff; border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 8px #fff; }
-        
         .pwr-btn { width: 95px; height: 38px; border-radius: 6px; border: 2px solid #444; background: #333; color: #666; font-weight: bold; cursor: pointer; font-size: 12px; }
         .on-ch1 { background: #f1c40f !important; color: #000 !important; border-color: #fff !important; }
         .on-ch2 { background: #3498db !important; color: #fff !important; border-color: #fff !important; }
         .set-btn { width: 95px; height: 38px; border-radius: 6px; border: 2px solid #27ae60; background: #1b4d2e; color: #2ecc71; font-weight: bold; cursor: pointer; font-size: 12px; }
-
         .quick-adj { display: flex; width: 95px; justify-content: space-between; align-items: center; background: #111; border: 1px solid #444; border-radius: 4px; padding: 2px; box-sizing: border-box; }
         .q-btn { background: #333; color: #fff; border: none; border-radius: 3px; width: 26px; height: 26px; cursor: pointer; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center;}
         .q-btn:hover { background: #555; }
         .q-lbl { font-size: 10px; color: #aaa; font-weight: bold; pointer-events: none; }
-
         .accordion { width: 100%; max-width: 1005px; margin-top: 10px; }
         .acc-item { background: #252525; border: 1px solid #444; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
         .acc-header { background: #333; padding: 10px 15px; cursor: pointer; font-weight: bold; font-size: 13px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #444; }
         .acc-content { padding: 20px; display: none; background: #1a1a1a; }
         .acc-item.active .acc-content { display: block; }
-        
         .tool-grid { display: flex; gap: 20px; align-items: stretch; }
         .tool-column { flex: 1; background: #222; padding: 15px; border-radius: 8px; border: 1px solid #333; display: flex; flex-direction: column; }
         .section-label { color: #f1c40f; font-size: 11px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid #444; padding-bottom: 5px; }
-        
         .v-line { border-left: 1px solid #444; margin: 0 5px; }
         .unit-label { font-size: 11px; color: #666; width: 35px; margin-left: 5px; }
-        
-        .mod-btn { width: 100%; padding: 8px 2px; background: #333; border: 1px solid #555; color: #eee; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 4px; box-sizing: border-box; }
+        .mod-btn { width: 100%; padding: 8px 2px; background: #333; border: 1px solid #555; color: #eee; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; text-align: center; box-sizing: border-box; }
         .mod-btn.active { background: #e67e22 !important; color: #fff !important; border-color: #fff !important; }
         .mod-btn:disabled { opacity: 0.15; cursor: not-allowed; filter: grayscale(1); }
-
         .field-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
         .field-row label { font-size: 11px; color: #888; font-weight: bold; }
         .field-row input, .field-row select { background: #000; border: 1px solid #555; color: #fff; padding: 7px; border-radius: 4px; font-size: 13px; transition: 0.2s; }
-        
         .row input:disabled, .row select:disabled, .field-row input:disabled, .field-row select:disabled { opacity: 0.2; cursor: not-allowed; background: #111; border-color: #333; }
-        
         .footer-ctrls { display: flex; gap: 20px; border-top: 1px solid #333; padding-top: 20px; justify-content: center; }
         .go-btn { width: 180px; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
         .stop-btn { width: 180px; padding: 12px; background: #c0392b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
         .ret-btn { width: 180px; padding: 12px; background: #34495e; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-
         #console-log { height: 140px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 12px; color: #0f0; margin-bottom: 10px; padding: 5px; background: #050505; border: 1px solid #333; }
         .tx { color: #f1c40f; } .rx { color: #3498db; } .err { color: #e74c3c; } .ver { color: #2ecc71; font-weight: bold; }
         #console-input-row { display: flex; gap: 10px; }
         #console-input { flex: 1; background: #000; color: #fff; border: 1px solid #555; padding: 8px; font-family: monospace; }
-        
         #canvas-container { background: #000; border: 2px solid #555; position: relative; cursor: crosshair; border-radius: 4px; overflow: hidden; touch-action: none; margin-bottom: 10px; }
         #waveCanvas { display: block; width: 100%; }
-        .file-label { display: inline-block; cursor: pointer; }
-    
+        .file-label { display: inline-block; cursor: pointer; }    
 
-        /* ---- Refactoring utilities ---- */
+        /* ---- Utilities & Layout ---- */
         .hidden { display: none !important; }
-        .flex-row { display: flex; }
-        .align-center { align-items: center; }
-        .justify-between { justify-content: space-between; }
-        .gap-5 { gap: 5px; }
-        .gap-10 { gap: 10px; }
-        .gap-12 { gap: 12px; }
-        .gap-15 { gap: 15px; }
-        .mt-20 { margin-top: 20px; }
-        .mb-0 { margin-bottom: 0 !important; }
-        .m-0 { margin: 0 !important; }
-        .p-0 { padding: 0 !important; }
-        .w-auto { width: auto !important; }
-        .w-full { width: 100% !important; }
-        .h-40 { height: 40px !important; }
         .text-center { text-align: center; }
         .box-border { box-sizing: border-box; }
         .flex-1 { flex: 1; }
@@ -104,21 +73,27 @@
         .flex-15 { flex: 1.5; }
         .flex-22 { flex: 2.2; }
         .flex-no-shrink { flex-shrink: 0; }
-        .column-gap-5 { column-gap: 5px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-        .btn-stack { display: flex; flex-direction: column; }
+        .mt-20 { margin-top: 20px; }
+        .btn-stack { display: flex; flex-direction: column; gap: 4px; }
+        
+        /* -- Editor Layout Adjustments -- */
+        .tool-column-sys { flex: 0 0 140px; padding: 12px 10px; } /* Narrower left column */
+        .sys-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+        .sys-grid .mod-btn { padding: 6px 0; font-size: 9px; letter-spacing: -0.5px; } /* Small buttons to fit side by side */
+        
         .tool-column-fixed-150 { flex: 0 0 150px; }
-        .tool-column-fixed-250 { flex: 0 0 250px; }
         .section-label-row { display: flex; justify-content: space-between; align-items: flex-end; }
         .cursor-meta { font-family: monospace; color: #888; font-size: 10px; text-transform: none; }
         .canvas-toolbar { display:flex; gap:12px; align-items:center; width:100%; padding:0 10px; box-sizing:border-box; }
         .toolbar-group { display:flex; gap:5px; }
         .toolbar-divider { height:25px; margin:0 !important; }
         .compact-btn { padding: 10px 5px !important; font-size: 11px !important; }
+        
+        /* -- Sweep Footer Control overrides -- */
         .footer-ctrls.compact { border-top:none; padding-top:0; margin-top:0; }
-        .btn-150 { width:150px !important; }
-        .btn-90 { width:90px !important; }
-        .btn-h-auto { height:auto !important; }
+        .sw-footer-btn { height: 40px; padding: 0 15px; }
+        .footer-ctrls.compact .set-btn { width: 150px; }
+        
         .upload-progress { width:100%; margin-top:12px; display:none; accent-color:#27ae60; }
         .danger-text { color:#e74c3c !important; }
         .header-actions { display:flex; gap:10px; }
@@ -130,10 +105,9 @@
         .col-stack-start { display:flex; flex-direction:column; gap:5px; height:100%; justify-content:flex-start; }
         .grid-fill-start { display:grid; grid-template-columns:1fr 1fr; gap:5px; height:100%; align-content:start; }
         .sweep-values { display:flex; flex-direction:row; gap:15px; justify-content:space-between; align-items:stretch; padding:12px 15px; margin-bottom:15px; }
-        .sweep-values > .field-row { min-width: 0; }
+        .sweep-values > .field-row { min-width: 0; margin-bottom: 0; }
         .input-with-unit { display:flex; align-items:center; }
         .select-compact { margin:0; padding:7px; }
-        .sys-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px; }
 
         .mod-btn[data-accent="orange"] { border-color: #e67e22; }
         .mod-btn[data-accent="blue"] { border-color: #3498db; }
@@ -172,7 +146,6 @@
                 <div class="row"><label>Offset (V)</label><input type="text" id="off1" data-dirty="field"></div>
                 <div class="row"><label>Duty (%)</label><input type="text" id="duty1" data-dirty="field"></div>
                 <div class="row"><label>Phase (°)</label><input type="text" id="phas1" data-dirty="field"></div>
-                
                 <div class="row" id="row-trap-rise" style="display: none;"><label>Rise (ns)</label><input type="text" id="trap_rise" data-dirty="field"></div>
                 <div class="row" id="row-adj-phas" style="display: none;"><label>PHAS (ns)</label><input type="text" id="adj_phas" data-dirty="field"></div>
             </div>
@@ -245,11 +218,10 @@
                         <button class="mod-btn source-btn-item" data-action="setModSource" data-source="2" id="s-manu">MANUAL</button>
                         <button class="mod-btn source-btn-item" data-action="setModSource" data-source="3" id="s-extdc">EXT DC</button>
                     </div>
-                    
-                    <div class="section-label" class="section-label mt-20">4. Modulation</div>
+                    <div class="section-label mt-20">4. Modulation</div>
                     <div class="mode-actions">
-                        <button class="go-btn" class="go-btn flex-1 w-auto compact-btn" data-action="startModulation">START</button>
-                        <button class="stop-btn" class="go-btn flex-1 w-auto compact-btn" data-action="stopModulation">STOP</button>
+                        <button class="go-btn flex-1 w-auto compact-btn" data-action="startModulation">START</button>
+                        <button class="stop-btn flex-1 w-auto compact-btn" data-action="stopModulation">STOP</button>
                     </div>
                 </div>
                 <div class="tool-column">
@@ -269,62 +241,61 @@
         <div class="acc-content">
             
             <div class="sweep-top">
-                
-                <div class="tool-column" class="tool-column tool-column-fixed-150">
+                <div class="tool-column tool-column-fixed-150">
                     <div class="section-label">Mode</div>
                     <div class="col-stack-start">
-                        <button class="mod-btn sw-mode-btn" class="m-0" data-action="setSweepMode" data-mode="2" id="sw-m-sweep">Sweep</button>
-                        <button class="mod-btn sw-mode-btn" class="m-0" data-action="setSweepMode" data-mode="1" id="sw-m-vco">VCO</button>
+                        <button class="mod-btn sw-mode-btn" data-action="setSweepMode" data-mode="2" id="sw-m-sweep">Sweep</button>
+                        <button class="mod-btn sw-mode-btn" data-action="setSweepMode" data-mode="1" id="sw-m-vco">VCO</button>
                     </div>
                 </div>
                 
-                <div class="v-line" class="m-0"></div>
+                <div class="v-line"></div>
                 
-                <div class="tool-column" class="tool-column flex-15">
+                <div class="tool-column flex-15">
                     <div class="section-label">Object</div>
                     <div class="grid-fill-start">
-                        <button class="mod-btn sw-obj-btn" class="m-0" data-action="setSweepObj" data-obj="0" id="sw-o-freq">Frequency</button>
-                        <button class="mod-btn sw-obj-btn" class="m-0" data-action="setSweepObj" data-obj="1" id="sw-o-amp">Amplitude</button>
-                        <button class="mod-btn sw-obj-btn" class="m-0" data-action="setSweepObj" data-obj="2" id="sw-o-off">Offset</button>
-                        <button class="mod-btn sw-obj-btn" class="m-0" data-action="setSweepObj" data-obj="3" id="sw-o-duty">Duty Cycle</button>
+                        <button class="mod-btn sw-obj-btn" data-action="setSweepObj" data-obj="0" id="sw-o-freq">Frequency</button>
+                        <button class="mod-btn sw-obj-btn" data-action="setSweepObj" data-obj="1" id="sw-o-amp">Amplitude</button>
+                        <button class="mod-btn sw-obj-btn" data-action="setSweepObj" data-obj="2" id="sw-o-off">Offset</button>
+                        <button class="mod-btn sw-obj-btn" data-action="setSweepObj" data-obj="3" id="sw-o-duty">Duty Cycle</button>
                     </div>
                 </div>
 
-                <div class="v-line" class="m-0"></div>
+                <div class="v-line"></div>
 
-                <div class="tool-column" class="tool-column flex-1">
+                <div class="tool-column flex-1">
                     <div class="section-label">Direction</div>
                     <div class="col-stack-start">
-                        <button class="mod-btn sw-dir-btn" class="m-0" data-action="setSweepDir" data-dir="0" id="sw-d-fwd">FWD</button>
-                        <button class="mod-btn sw-dir-btn" class="m-0" data-action="setSweepDir" data-dir="1" id="sw-d-back">BACK</button>
-                        <button class="mod-btn sw-dir-btn" class="m-0" data-action="setSweepDir" data-dir="2" id="sw-d-fb">FWD / BACK</button>
+                        <button class="mod-btn sw-dir-btn" data-action="setSweepDir" data-dir="0" id="sw-d-fwd">FWD</button>
+                        <button class="mod-btn sw-dir-btn" data-action="setSweepDir" data-dir="1" id="sw-d-back">BACK</button>
+                        <button class="mod-btn sw-dir-btn" data-action="setSweepDir" data-dir="2" id="sw-d-fb">FWD / BACK</button>
                     </div>
                 </div>
             </div>
 
             <div class="tool-column sweep-values">
-                <div class="field-row" class="field-row flex-1 mb-0">
+                <div class="field-row flex-1">
                     <label>Start</label>
                     <div class="input-with-unit">
                         <input type="text" id="sw-val-start" data-dirty="sweep">
                         <span class="unit-label" id="sw-unit-start">Hz</span>
                     </div>
                 </div>
-                <div class="field-row" class="field-row flex-1 mb-0">
+                <div class="field-row flex-1">
                     <label>Stop</label>
                     <div class="input-with-unit">
                         <input type="text" id="sw-val-stop" data-dirty="sweep">
                         <span class="unit-label" id="sw-unit-stop">Hz</span>
                     </div>
                 </div>
-                <div class="field-row" class="field-row flex-1 mb-0">
+                <div class="field-row flex-1">
                     <label>Time (1-999)</label>
                     <div class="input-with-unit">
                         <input type="text" id="sw-val-time" data-dirty="sweep">
                         <span class="unit-label">s</span>
                     </div>
                 </div>
-                <div class="field-row" class="field-row flex-1 mb-0">
+                <div class="field-row flex-1">
                     <label>Scaling</label>
                     <select id="sw-val-scale" data-dirty="sweep" class="select-compact">
                         <option value="0">Linear</option>
@@ -333,10 +304,10 @@
                 </div>
             </div>
 
-            <div class="footer-ctrls" class="footer-ctrls compact">
-                <button class="set-btn" class="set-btn btn-150 h-40" id="sw-set-btn" data-action="sendSweepBatch">SET VALUES</button>
-                <button class="go-btn" class="go-btn h-40 p-0" id="sw-run-btn" data-action="toggleSweepRun">START / STOP</button>
-                <button class="ret-btn" class="ret-btn h-40 p-0" data-action="returnToNormal">RETURN</button>
+            <div class="footer-ctrls compact">
+                <button class="set-btn sw-footer-btn" id="sw-set-btn" data-action="sendSweepBatch">SET VALUES</button>
+                <button class="go-btn sw-footer-btn" id="sw-run-btn" data-action="toggleSweepRun">START / STOP</button>
+                <button class="ret-btn sw-footer-btn" data-action="returnToNormal">RETURN</button>
             </div>
         </div>
     </div>
@@ -346,7 +317,7 @@
         <div class="acc-content">
             <div class="tool-grid">
                 
-                <div class="tool-column" class="tool-column tool-column-fixed-250">
+                <div class="tool-column tool-column-sys">
                     <div class="section-label">Device Control</div>
                     <div class="sys-grid">
                         <button class="mod-btn" id="sys-bz-on" data-action="toggleSys" data-cmd="UBZ1" data-group="sys-bz" data-state="true">BUZZER ON</button>
@@ -359,7 +330,7 @@
                         <button class="mod-btn" id="sys-ul-off" data-action="toggleSys" data-cmd="UUL0" data-group="sys-ul" data-state="false">Upl. OFF</button>
                     </div>
 
-                    <div class="section-label" class="section-label mt-20">CH2 Sync (Follow CH1)</div>
+                    <div class="section-label mt-20">CH2 Sync (Follow CH1)</div>
                     <div class="sys-grid">
                         <button class="mod-btn" id="sync-w-on" data-action="toggleSync" data-obj="0" data-state="true">WAVE ON</button>
                         <button class="mod-btn" id="sync-w-off" data-action="toggleSync" data-obj="0" data-state="false">WAVE OFF</button>
@@ -377,7 +348,7 @@
                         <button class="mod-btn" id="sync-d-off" data-action="toggleSync" data-obj="4" data-state="false">DUTY OFF</button>
                     </div>
                     
-                    <div class="section-label" class="section-label mt-20">Memory Slots</div>
+                    <div class="section-label mt-20">Memory Slots</div>
                     <div class="field-row"><label>Slot (0-19)</label><select id="preset-slot"></select></div>
                     <div class="mode-actions">
                         <button class="mod-btn" data-accent="orange" data-action="savePreset">SAVE</button>
@@ -385,8 +356,8 @@
                     </div>
                 </div>
 
-                <div class="tool-column" class="tool-column flex-1">
-                    <div class="section-label" class="section-label section-label-row">
+                <div class="tool-column flex-1">
+                    <div class="section-label section-label-row">
                         <span>Arb Waveform Editor</span>
                         <span id="cursor-pos" class="cursor-meta">X: 0000 | Y: 08192</span>
                     </div>
@@ -398,26 +369,26 @@
                     <div class="canvas-toolbar">
                         
                         <div class="toolbar-group flex-22">
-                            <button class="s-btn active" class="s-btn active flex-1" data-action="generateSine">Sine</button>
-                            <button class="s-btn active" class="s-btn active flex-1" data-action="generateSquare">Square</button>
-                            <button class="s-btn active" class="s-btn active flex-1" data-action="generateTriangle">Triangle</button>
-                            <button class="s-btn active" class="s-btn active flex-1" data-action="smoothWave" title="Smooth">Smooth</button>
-                            <button class="s-btn active" class="s-btn active flex-1 danger-text" data-action="zeroWave">Zero</button>
+                            <button class="s-btn active flex-1" data-action="generateSine">Sine</button>
+                            <button class="s-btn active flex-1" data-action="generateSquare">Square</button>
+                            <button class="s-btn active flex-1" data-action="generateTriangle">Triangle</button>
+                            <button class="s-btn active flex-1" data-action="smoothWave" title="Smooth">Smooth</button>
+                            <button class="s-btn active flex-1 danger-text" data-action="zeroWave">Zero</button>
                         </div>
                         
-                        <div class="v-line" class="v-line toolbar-divider"></div>
+                        <div class="v-line toolbar-divider"></div>
                         
                         <div class="toolbar-group flex-1">
                             <input type="file" id="load-file" accept=".fy" class="hidden">
-                            <label for="load-file" class="s-btn active file-label" class="s-btn active file-label flex-1 text-center box-border">LOAD</label>
-                            <button class="s-btn active" data-action="exportBinary" class="s-btn active file-label flex-1 text-center box-border">SAVE</button>
+                            <label for="load-file" class="s-btn active file-label flex-1 text-center box-border">LOAD</label>
+                            <button class="s-btn active file-label flex-1 text-center box-border" data-action="exportBinary">SAVE</button>
                         </div>
                         
-                        <div class="v-line" class="v-line toolbar-divider"></div>
+                        <div class="v-line toolbar-divider"></div>
                         
                         <div class="toolbar-group flex-12">
                             <select id="arb-target-slot" class="flex-1"></select>
-                            <button class="set-btn" id="btn-upload" class="set-btn btn-90 btn-h-auto flex-no-shrink" data-action="startDirectUpload">UPLOAD</button>
+                            <button class="set-btn btn-90 btn-h-auto flex-no-shrink" id="btn-upload" data-action="startDirectUpload">UPLOAD</button>
                         </div>
                     </div>
                     
@@ -438,8 +409,8 @@
             </div>
         </div>
     </div>
-</div>
-
+</section>
+</main>
 
 <script>
     /*
@@ -447,11 +418,13 @@
      * Refactored single-file edition.
      */
 
-    // ===== Hardware revision =====
+    // ===== Configuration & State =====
+
+    // Hardware revision handling
     // "old" = WMF/WFF as integer microhertz, "new" = float hertz
     var hwVersion = "new";
 
-    // ===== Shared state =====
+    // Global application state and constants
     const App = {
         port: null,
         writer: null,
@@ -483,9 +456,10 @@
         }
     };
 
+    // State and references for the Arbitrary Waveform Canvas
     const WaveEditor = {
-        canvas: document.getElementById('waveCanvas'),
-        ctx: document.getElementById('waveCanvas').getContext('2d'),
+        canvas: null,
+        ctx: null,
         points: new Uint16Array(8192),
         isDrawing: false,
         lastX: null,
@@ -493,6 +467,7 @@
     };
     WaveEditor.points.fill(8192);
 
+    // DOM manipulation and query utilities
     const Dom = {
         byId(id) { return document.getElementById(id); },
         all(selector) { return document.querySelectorAll(selector); },
@@ -501,6 +476,7 @@
         text(id, value) { Dom.byId(id).innerText = value; }
     };
 
+    // Serial command mapping for Channel 1 and 2
     const ChannelConfig = {
         1: {
             freqWrite: 'WMF', waveWrite: 'WMW', ampWrite: 'WMA', offWrite: 'WMO', dutyWrite: 'WMD', phaseWrite: 'WMP',
@@ -516,6 +492,7 @@
         }
     };
 
+    // General formatting and parsing utilities
     const Utils = {
         cleanNumeric(value) {
             return String(value || '').replace(/[^\d.-]/g, '');
@@ -535,6 +512,9 @@
         }
     };
 
+    // ===== Core Modules =====
+
+    // UI rendering and visual state updates
     const UI = {
         log(msg, cls) {
             const log = Dom.byId('console-log');
@@ -582,6 +562,7 @@
         }
     };
 
+    // Web Serial API handling and device communication
     const Serial = {
         async connect() {
             try {
@@ -643,6 +624,7 @@
         }
     };
 
+    // Sweep and VCO control logic
     const Sweep = {
         saveInputs() {
             const current = App.sweepData.settings[App.sweepData.obj];
@@ -723,6 +705,7 @@
         async returnToNormal() { await Serial.query('WMN1'); }
     };
 
+    // Modulation (AM/FM/PM/etc.) control logic
     const Modulation = {
         setMode(mode, btn) {
             App.modState.mode = mode;
@@ -779,6 +762,7 @@
         }
     };
 
+    // Core device control, synchronization, and preset management
     const Device = {
         async toggleSystem(cmd, group, isTrue) {
             await Serial.query(cmd);
@@ -825,7 +809,7 @@
             const config = ChannelConfig[channel];
             const channelState = App.state['ch' + channel];
             
-            // Frequenz holen und wieder als normalen Float auslesen
+            // Fetch frequency and parse it back to a standard float
             channelState.freq = await Device.getValue(config.freqRead);
             UI.setChannelDisplay(channel, channelState.freq);
 
@@ -877,7 +861,7 @@
             const amResp = Utils.cleanNumeric(await Serial.query('RPR'));
             Dom.setValue('mod-am-val', amResp ? Math.floor(parseInt(amResp) / 10) : '100');
 
-            // Nutze wieder getValue (Standard-Float-Parsing) für Deviation und HOP
+            // Use standard float parsing for Deviation and HOP
             Dom.setValue('mod-dev-val', await Device.getValue('RFM'));
             Dom.setValue('mod-hop-val', await Device.getValue('RFK'));
 
@@ -952,6 +936,7 @@
         }
     };
 
+    // Manual serial command terminal logic
     const DebugTerminal = {
         handleKey(event) {
             const input = Dom.byId('console-input');
@@ -983,6 +968,7 @@
         }
     };
 
+    // Canvas drawing, cursor tracking, and waveform generation logic
     const Wave = {
         draw() {
             const { canvas, ctx, points } = WaveEditor;
@@ -1149,7 +1135,13 @@
         }
     };
 
+    // ===== Initialization & Events =====
+
+    // Application startup and initial UI population
     function init() {
+        WaveEditor.canvas = Dom.byId('waveCanvas');
+        WaveEditor.ctx = WaveEditor.canvas.getContext('2d');
+
         const select1 = Dom.byId('wave1');
         const select2 = Dom.byId('wave2');
         App.waves.forEach((wave, index) => {
@@ -1178,7 +1170,7 @@
         Wave.draw();
     }
 
-
+    // Global event delegation (clicks, inputs, changes)
     function bindEvents() {
         document.addEventListener('click', event => {
             const el = event.target.closest('[data-action]');
@@ -1217,66 +1209,27 @@
             }
         });
 
-        document.querySelectorAll('[data-dirty="field"]').forEach(el => {
-            const eventName = el.tagName === 'SELECT' ? 'change' : 'input';
-            el.addEventListener(eventName, () => UI.markDirty(el));
+        document.addEventListener('input', event => {
+            const el = event.target;
+            if (!el.dataset) return;
+            if (el.dataset.dirty === 'field') UI.markDirty(el);
+            if (el.dataset.dirty === 'sweep') Sweep.markDirty();
         });
 
-        document.querySelectorAll('[data-wave-select="1"]').forEach(el => {
-            el.addEventListener('change', () => Device.updateWaveUI());
-        });
-
-        document.querySelectorAll('[data-dirty="sweep"]').forEach(el => {
-            const eventName = el.tagName === 'SELECT' ? 'change' : 'input';
-            el.addEventListener(eventName, () => Sweep.markDirty());
+        document.addEventListener('change', event => {
+            const el = event.target;
+            if (el.id === 'load-file') {
+                Wave.importBinary(el);
+                return;
+            }
+            if (!el.dataset) return;
+            if (el.dataset.dirty === 'field') UI.markDirty(el);
+            if (el.dataset.dirty === 'sweep') Sweep.markDirty();
+            if (el.dataset.waveSelect === '1') Device.updateWaveUI();
         });
 
         Dom.byId('console-input').addEventListener('keydown', DebugTerminal.handleKey);
-        Dom.byId('load-file').addEventListener('change', event => Wave.importBinary(event.target));
     }
-
-    // ===== Compatibility wrappers for inline HTML handlers =====
-    function connectSerial() { return Serial.connect(); }
-    function syncFromDevice() { return Device.syncFromDevice(); }
-    function toggleAcc(header) { return UI.toggleAccordion(header); }
-    function toggleSys(cmd, group, isTrue) { return Device.toggleSystem(cmd, group, isTrue); }
-    function updateSysBtn(group, isTrue) { return UI.updateSysButton(group, isTrue); }
-    function toggleSync(obj, isTrue) { return Device.toggleSync(obj, isTrue); }
-    function updateSyncBtn(obj, isTrue) { return UI.updateSyncButton(obj, isTrue); }
-    function setSweepMode(mode, btn) { return Sweep.setMode(mode, btn); }
-    function setSweepObj(obj, btn) { return Sweep.setObject(obj, btn); }
-    function setSweepDir(dir, btn) { return Sweep.setDirection(dir, btn); }
-    function saveSweepInputs() { return Sweep.saveInputs(); }
-    function updateSweepUI() { return Sweep.updateUI(); }
-    function markSweepDirty() { return Sweep.markDirty(); }
-    function sendSweepBatch() { return Sweep.sendBatch(); }
-    function toggleSweepRun() { return Sweep.toggleRun(); }
-    function returnToNormal() { return Sweep.returnToNormal(); }
-    function savePreset() { return Device.savePreset(); }
-    function loadPreset() { return Device.loadPreset(); }
-    function setModMode(mode, btn) { return Modulation.setMode(mode, btn); }
-    function setModSource(source, btn) { return Modulation.setSource(source, btn); }
-    function updateModUI() { return Modulation.updateUI(); }
-    function startModulation() { return Modulation.start(); }
-    function stopModulation() { return Modulation.stop(); }
-    function updateWaveUI() { return Device.updateWaveUI(); }
-    function markDirty(el) { return UI.markDirty(el); }
-    function sendBatch(channel) { return Device.sendBatch(channel); }
-    function updatePowerUI(channel, isOn) { return UI.updatePower(channel, isOn); }
-    function togglePower(channel) { return Device.togglePower(channel); }
-    function adjFreq(channel, multiplier) { return Device.adjustFrequency(channel, multiplier); }
-    function setStep(channel, stepValue, button) { return Device.setStep(channel, stepValue, button); }
-    function updateStatus(text, cssClass) { return UI.setStatus(text, cssClass); }
-    function handleConsoleKey(event) { return DebugTerminal.handleKey(event); }
-    function sendManualCommand() { return DebugTerminal.send(); }
-    function draw() { return Wave.draw(); }
-    function generateSine() { return Wave.generateSine(); }
-    function generateSquare() { return Wave.generateSquare(); }
-    function generateTriangle() { return Wave.generateTriangle(); }
-    function smoothWave() { return Wave.smooth(); }
-    function exportBinary() { return Wave.exportBinary(); }
-    function importBinary(input) { return Wave.importBinary(input); }
-    function startDirectUpload() { return Wave.startDirectUpload(); }
 
     Object.defineProperty(window, 'points', {
         get() { return WaveEditor.points; },
@@ -1285,6 +1238,5 @@
 
     window.onload = init;
 </script>
-
 </body>
 </html>
