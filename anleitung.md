@@ -26,8 +26,6 @@ Nach der erfolgreichen Installation des Treibers schließe den FY6900 per USB-Ka
 2\. Installation & Aufruf
 -------------------------
 
-Die Web Serial API erfordert zwingend einen sicheren Kontext (`https://` oder `localhost`). Ein einfaches Doppelklicken der `index.html` von der lokalen Festplatte (`file://`) wird vom Browser aus Sicherheitsgründen blockiert!
-
 **Du hast zwei Möglichkeiten:**
 
 1.  **Online nutzen:** Rufe den Commander direkt über diese Webseite je nach Version der Hardware auf:
@@ -36,7 +34,7 @@ Die Web Serial API erfordert zwingend einen sicheren Kontext (`https://` oder `l
 (https://katzenjens.github.io/fy6900commander/new_version.html)  Für neuere Versionen des FY6900.
 **Falls es bei der Frequenzeinstellung zu Problemen kommt, jeweils die andere Version aufrufen.**
 
-2.  **Lokal hosten:** Klone das Repository und stelle die .html Dateien auf deinen vorhandenen Webserver oder über einen lokalen Webserver (z. B. VS Code Live Server, Python `http.server` etc.) bereit. Hinweis: Die Dateien index.html und new_version.html sind bis auf eine Zeile identisch. In dieser ist entweder "new" oder "old" vermerkt.
+2.  **Lokal hosten:** Klone das Repository und stelle die .html Dateien auf deinen vorhandenen Webserver oder in einem beliebigen lokalen Verzeichnis bereit. Hinweis: Die Dateien index.html und new_version.html sind bis auf eine Zeile identisch. In dieser ist entweder "new" oder "old" vermerkt.
 
 * * *
 
