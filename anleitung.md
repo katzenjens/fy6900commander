@@ -9,6 +9,9 @@ Die Verbindung zum Gerät erfolgt per USB. Die Anwendung läuft komplett statisc
 
 > ⚠️ **Wichtiger Hinweis:** Die Möglichkeit, per USB angeschlossene Geräte direkt über den Browser anzusprechen (Web Serial API), wird derzeit **nur von Chromium-basierten Browsern** (Google Chrome, Microsoft Edge, Opera) unterstützt. Mozilla Firefox oder Apple Safari (iOS/macOS) funktionieren hierfür leider nicht!
 
+ 
+> _Hinweis für Linux-Nutzer: Um aus dem Browser heraus auf den seriellen Port zugreifen zu können, muss der Benutzer Mitglied der Gruppe `dialout` sein (Befehl: `sudo usermod -a -G dialout $USER`). Danach ist ein Ab- und erneutes Anmelden erforderlich._
+
 * * *
 
 1\. Vorbereitung & Treiber
