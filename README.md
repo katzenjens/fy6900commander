@@ -13,8 +13,6 @@ For newer versions of the FY6900 in case the frequency adjustment has issues cli
 
 https://katzenjens.github.io/fy6900commander/new_version.html
 
-Only works in Chrome based browsers.
-
 Feel free to open an issue if your device does not react like it should do since I only tested it with my hardware. Your mileage may vary.
 
 ----------------
