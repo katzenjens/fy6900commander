@@ -30,6 +30,4 @@ Dann hier klicken:
 
 https://katzenjens.github.io/fy6900commander/new_version.html
 
-Funktioniert nur mit Chrome-basierten Browsern.
-
 Falls etwas nicht wie erwartet funktionieren sollte, bitte ein Issue öffnen. Ich habe den Kram nur mit meiner Version der Hardware testen können. Die neuere Hardwareversion hat jemand anders getestet. Eigentlich sollte nun alles funktionieren.
