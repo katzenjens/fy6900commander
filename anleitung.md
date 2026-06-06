@@ -6,9 +6,6 @@ FY6900 / FY6800 Web Commander – Bedienungsanleitung
 Diese HTML-basierte Anwendung bietet dir eine komplette Fernsteuerung und Bedienoberfläche für den FeelElec FY6900 (und weitgehend kompatible FY6800) Signalgenerator direkt über den Webbrowser.
 
 Die Verbindung zum Gerät erfolgt per USB. Die Anwendung läuft komplett statisch und lokal im Browser deines Rechners – **es fließen keinerlei Daten nach außen!**
-
-> ⚠️ **Wichtiger Hinweis:** Die Möglichkeit, per USB angeschlossene Geräte direkt über den Browser anzusprechen (Web Serial API), wird derzeit **nur von Chromium-basierten Browsern** (Google Chrome, Microsoft Edge, Opera) unterstützt. Mozilla Firefox oder Apple Safari (iOS/macOS) funktionieren hierfür leider nicht!
-
  
 > _**Hinweis für Linux-Nutzer:** Um aus dem Browser heraus auf den seriellen Port zugreifen zu können, muss der Benutzer Mitglied der Gruppe `dialout` sein (Befehl: `sudo usermod -a -G dialout $USER`). Danach ist ein Ab- und erneutes Anmelden erforderlich._
 
